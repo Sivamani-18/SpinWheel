@@ -2,6 +2,8 @@
 
 A fully customizable and responsive **React Spin Wheel Component** built with TypeScript. Supports smooth animations, audio feedback, sector-based labeling, and a modal to show the winning result. Ideal for lucky draw or reward-based UIs.
 
+![image](https://github.com/user-attachments/assets/98e09ad1-56c2-48b6-a789-219cce416d43)
+
 ---
 
 ## ✨ Features
