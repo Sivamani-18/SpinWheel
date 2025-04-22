@@ -1,0 +1,154 @@
+/* Container for the spin the wheel */
+.spin-the-wheel-container {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#wheel {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 12px solid red;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  background: radial-gradient(circle, #8b0000 0%, #ff0000 70%, #b30000 100%);
+  transition: transform 0.4s ease-out;
+}
+
+/* Wrapper for the wheel and bulbs */
+.relative-wrapper {
+  position: relative;
+}
+
+/* Spin button style */
+.spin-button {
+  font: 1.5em 'Lato', sans-serif;
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 30%;
+  margin: -15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3a2222;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.3), 0 0 20px rgba(0, 0, 0, 0.6),
+    inset 0 0 8px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 10;
+  border-radius: 9999px;
+  transition-property: transform;
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.spin-button:hover {
+  transform: scale(1.05);
+}
+
+/* Arrow on the spin button */
+.spin-arrow {
+  position: absolute;
+  top: -17px;
+  border: 10px solid transparent;
+  border-bottom-color: #fff;
+  border-top: none;
+}
+
+/* Bulb ring and bulbs */
+.bulb-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.bulb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin: -6px;
+  background: radial-gradient(circle, #fefefe, #ff0000);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.9), 0 0 12px rgba(255, 200, 200, 0.6),
+    0 0 20px rgba(255, 0, 0, 0.7);
+  transform-origin: center;
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+/* Wheel base image */
+.wheel-base-img {
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  width: 80%;
+}
+
+/* Modal for result */
+.win-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.modal-content button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #1e40af;
+}
